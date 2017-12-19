@@ -1,6 +1,6 @@
 # Carreira Desenvolvedor Java
 
-Cursos da trilha "Carreira Desenvolvedor Java" da Alura.
+Exercícios da trilha "Carreira Desenvolvedor Java" da Alura.
 
 - [ ] Java I: Primeiros Passos
 - [ ] Java II: Orientação a Objetos
