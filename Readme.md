@@ -2,7 +2,7 @@
 
 Exercícios da trilha "Carreira Desenvolvedor Java" da Alura.
 
-- [ ] Java I: Primeiros Passos
+- [x] Java I: Primeiros Passos
 - [ ] Java II: Orientação a Objetos
 - [ ] Java III: Principais APIs e Bibliotecas
 - [ ] Java: Dominando as Collections
