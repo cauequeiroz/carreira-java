@@ -1,6 +1,6 @@
 package banco;
 
-public class Conta {
+public abstract class Conta {
 	protected double saldo;
 	
 	public double getSaldo() {
@@ -15,7 +15,5 @@ public class Conta {
 		this.saldo -= valor;
 	}
 	
-	public void atualiza(double taxa) {
-		this.saldo += this.saldo * taxa;
-	}
+	public abstract void atualiza(double taxa);
 }
