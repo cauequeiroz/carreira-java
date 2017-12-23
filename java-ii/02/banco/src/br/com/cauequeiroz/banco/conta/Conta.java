@@ -7,6 +7,11 @@ public abstract class Conta {
 		return this.saldo;
 	}
 	
+	/**
+	 * Realiza um saque na conta dado um valor
+	 * @param valor a ser sacado
+	 * @throws ValorInvalidoException caso o saldo seja insuficiente
+	 */
 	public void deposita(double valor) throws ValorInvalidoException {
 		if ( valor < 0 ) {
 			throw new ValorInvalidoException(valor);
