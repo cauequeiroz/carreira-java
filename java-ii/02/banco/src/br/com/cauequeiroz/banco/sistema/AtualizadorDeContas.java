@@ -1,4 +1,6 @@
-package banco;
+package br.com.cauequeiroz.banco.sistema;
+
+import br.com.cauequeiroz.banco.conta.Conta;
 
 public class AtualizadorDeContas {
 	private double saldoTotal = 0;

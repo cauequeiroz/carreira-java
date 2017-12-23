@@ -1,4 +1,9 @@
-package banco;
+package br.com.cauequeiroz.fj11.programa;
+
+import br.com.cauequeiroz.fj11.modelo.Desenvolvedor;
+import br.com.cauequeiroz.fj11.modelo.Funcionario;
+import br.com.cauequeiroz.fj11.modelo.Gerente;
+import br.com.cauequeiroz.fj11.modelo.TotalizadorDeBonus;
 
 class TestaFuncionario {
 	public static void main(String[] args) {

@@ -1,4 +1,6 @@
-package banco;
+package br.com.cauequeiroz.banco.sistema;
+
+import br.com.cauequeiroz.fj11.modelo.Tributavel;
 
 public class GerenciadorImpostoDeRenda {
 	private double total = 0;

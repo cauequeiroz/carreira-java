@@ -1,4 +1,4 @@
-package banco;
+package br.com.cauequeiroz.fj11.programa;
 
 public class TestaErro {
 	public static void main(String[] args) {

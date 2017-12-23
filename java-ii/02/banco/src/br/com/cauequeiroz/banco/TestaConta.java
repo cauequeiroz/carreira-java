@@ -1,4 +1,10 @@
-package banco;
+package br.com.cauequeiroz.banco;
+
+import br.com.cauequeiroz.banco.conta.Conta;
+import br.com.cauequeiroz.banco.conta.ContaCorrente;
+import br.com.cauequeiroz.banco.conta.ContaPoupanca;
+import br.com.cauequeiroz.banco.conta.ValorInvalidoException;
+import br.com.cauequeiroz.banco.sistema.AtualizadorDeContas;
 
 public class TestaConta {
 	public static void main(String[] args) throws ValorInvalidoException {

@@ -1,4 +1,4 @@
-package banco;
+package br.com.cauequeiroz.banco.conta;
 
 public class ContaPoupanca extends Conta {
 	

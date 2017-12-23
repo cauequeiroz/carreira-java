@@ -1,4 +1,4 @@
-package banco;
+package br.com.cauequeiroz.banco.conta;
 
 public abstract class Conta {
 	protected double saldo;

@@ -1,4 +1,6 @@
-package banco;
+package br.com.cauequeiroz.banco.conta;
+
+import br.com.cauequeiroz.fj11.modelo.Tributavel;
 
 public class ContaCorrente extends Conta implements Tributavel {
 	@Override

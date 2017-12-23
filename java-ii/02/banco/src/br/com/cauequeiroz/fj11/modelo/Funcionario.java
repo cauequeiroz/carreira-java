@@ -1,4 +1,4 @@
-package banco;
+package br.com.cauequeiroz.fj11.modelo;
 
 public class Funcionario {
 	protected double salario;
