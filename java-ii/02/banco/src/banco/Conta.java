@@ -7,7 +7,11 @@ public abstract class Conta {
 		return this.saldo;
 	}
 	
-	public void deposita(double valor) {
+	public void deposita(double valor) throws ValorInvalidoException {
+		if ( valor < 0 ) {
+			throw new ValorInvalidoException(valor);
+		}
+		
 		this.saldo += valor;
 	}
 	
