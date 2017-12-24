@@ -1,18 +1,8 @@
 package br.com.cauequeiroz.fj11.modelos;
 
-public class ContaCorrente extends Conta {
-	private int numero;
-	
+public class ContaCorrente extends Conta {	
 	public ContaCorrente(double valor) {
 		super(valor);
-	}
-	
-	public void setNumero(int valor) {
-		this.numero = valor;
-	}
-	
-	public int getNumero() {
-		return this.numero;
 	}
 	
 	@Override
@@ -21,5 +11,10 @@ public class ContaCorrente extends Conta {
 		
 		ContaCorrente conta = (ContaCorrente) obj;
 		return this.numero == conta.getNumero();
+	}
+
+	@Override
+	public int compareTo(Conta outra) {
+		return this.nome.compareTo(outra.nome);
 	}
 }
