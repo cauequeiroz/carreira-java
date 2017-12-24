@@ -29,6 +29,10 @@ public abstract class Conta implements Comparable<Conta> {
 		return this.nome;
 	}
 	
+	public synchronized void deposita(double valor) {
+		this.saldo += valor;
+	}
+	
 	@Override
 	public String toString() {
 		return "O saldo da conta é " + this.saldo;
