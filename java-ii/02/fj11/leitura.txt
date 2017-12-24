@@ -1,0 +1,9 @@
+Lendo arquivos com o Java:
+------------------------------
+
+InputStream is = new FileInputStream("arquivo.txt");
+InputStreamReader isr = new InputStreamReader(is);
+BufferedReader br = new BufferedReader(isr);
+
+String linha = br.readLine();
+System.out.println(linha);
