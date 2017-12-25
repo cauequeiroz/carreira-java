@@ -10,20 +10,20 @@ public class Aula implements Comparable<Aula> {
 	}
 	
 	public String getNome() {
-		return this.titulo;
+		return titulo;
 	}
 	
 	public int getTempo() {
-		return this.tempo;
+		return tempo;
 	}
 	
 	@Override
 	public String toString() {
-		return "[Aula: " + this.titulo + ", " + this.tempo + " minutos]";
+		return "[Aula: " + titulo + ", " + tempo + " minutos]";
 	}
 
 	@Override
 	public int compareTo(Aula outraAula) {
-		return this.titulo.compareTo(outraAula.titulo);
+		return titulo.compareTo(outraAula.titulo);
 	}	
 }
