@@ -1,5 +1,8 @@
 package br.com.cauequeiroz;
 
+import java.util.Collections;
+import java.util.Set;
+
 public class TestaCurso {
 	public static void main(String[] args) {
 		
@@ -11,6 +14,17 @@ public class TestaCurso {
 		System.out.println("Aulas: " + html5.getAulas());
 		System.out.println("Tempo total de curso: " + html5.getTempoTotal());
 		System.out.println(html5);
+		
+		Aluno a1 = new Aluno("Caue Queiroz", 14015);
+		Aluno a2 = new Aluno("Mariana Nolasco", 14032);
+		Aluno a3 = new Aluno("Sophia Oliveira", 13001);
+		
+		html5.matricula(a1);
+		html5.matricula(a2);
+		html5.matricula(a3);
+		
+		System.out.println("\nAlunos matriculados:");
+		html5.getAlunos().forEach(Aluno -> System.out.println(Aluno));
 		
 	}
 }
