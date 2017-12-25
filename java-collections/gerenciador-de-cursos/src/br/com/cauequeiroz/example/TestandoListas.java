@@ -1,4 +1,4 @@
-package br.com.cauequeiroz;
+package br.com.cauequeiroz.example;
 
 import java.util.ArrayList;
 import java.util.Collections;
