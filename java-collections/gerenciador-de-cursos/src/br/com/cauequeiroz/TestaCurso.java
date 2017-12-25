@@ -11,5 +11,6 @@ public class TestaCurso {
 		System.out.println("Aulas: " + html5.getAulas());
 		System.out.println("Tempo total de curso: " + html5.getTempoTotal());
 		System.out.println(html5);
+		
 	}
 }
