@@ -26,5 +26,10 @@ public class TestaCurso {
 		System.out.println("\nAlunos matriculados:");
 		html5.getAlunos().forEach(Aluno -> System.out.println(Aluno));
 		
+		System.out.println("\nO aluno " + a1 + " está matriculado?");
+		System.out.println(html5.estaMatriculado(a1));
+		
+		Aluno caue = new Aluno("Caue Queiroz", 14015);
+		System.out.println(html5.estaMatriculado(caue));
 	}
 }
