@@ -1,8 +1,5 @@
 package br.com.cauequeiroz;
 
-import java.util.Collections;
-import java.util.Set;
-
 public class TestaCurso {
 	public static void main(String[] args) {
 		
@@ -31,5 +28,8 @@ public class TestaCurso {
 		
 		Aluno caue = new Aluno("Caue Queiroz", 14015);
 		System.out.println(html5.estaMatriculado(caue));
+		
+		System.out.println("\nQuem é o aluno 14032?");
+		System.out.println(html5.buscaMatricula(14032));
 	}
 }
