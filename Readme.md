@@ -6,4 +6,4 @@ Exercícios da trilha "Carreira Desenvolvedor Java" da Alura.
 - [x] Java II: Orientação a Objetos
 - [x] Java III: Principais APIs e Bibliotecas
 - [x] Java: Dominando as Collections
-- [ ] Java 8: Tire proveito dos novos recursos da linguagem
+- [x] Java 8: Tire proveito dos novos recursos da linguagem
