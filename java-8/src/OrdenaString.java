@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class OrdenaString {
@@ -15,12 +16,10 @@ public class OrdenaString {
 		words.sort((s1, s2) -> s1.compareTo(s2));
 		System.out.println("Alfabetica: " + words);
 		
-		words.sort((s1, s2) -> Integer.compare(s1.length(), s2.length()));
+		words.sort(Comparator.comparing(String::length));
 		System.out.println("Tamanho: " + words);
 		
 		System.out.println("\nListando os items.");
-		words.forEach(s -> System.out.println("> " + s));		
-		
-		new Thread(() -> System.out.println("Rodando a thread...")).start();
+		words.forEach(System.out::println);		
 	}
 }
