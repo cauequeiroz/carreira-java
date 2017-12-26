@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 class Curso {
@@ -40,10 +42,18 @@ public class TestaStream {
 		Stream<String> nomes = cursos.stream()
 			.map(Curso::getNome);
 		
-		cursos.stream()
+		Optional<Curso> curso = cursos.stream()
 		   .filter(c -> c.getAlunos() > 50)
-		   .map(Curso::getAlunos)
-		   .forEach(System.out::println);
+		   .findFirst();
+		
+		cursos.stream()
+			.mapToInt(Curso::getAlunos)
+			.average()
+			.ifPresent(System.out::println);
+		
+		List<Curso> listaCurso = cursos.stream()
+				.filter(c -> c.getAlunos() > 50)
+				.collect(Collectors.toList());
 		
 	}
 }
