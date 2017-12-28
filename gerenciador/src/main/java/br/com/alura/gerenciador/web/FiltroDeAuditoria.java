@@ -16,11 +16,11 @@ import javax.servlet.http.HttpServletRequest;
 public class FiltroDeAuditoria implements Filter {
 
 	@Override
-	public void init(FilterConfig arg0) throws ServletException {
+	public void destroy() {
 	}
 
 	@Override
-	public void destroy() {
+	public void init(FilterConfig arg0) throws ServletException {
 	}
 
 	@Override
@@ -28,30 +28,30 @@ public class FiltroDeAuditoria implements Filter {
 			throws IOException, ServletException {
 
 		HttpServletRequest req = (HttpServletRequest) request;
-		String url = req.getRequestURI();
-		String usuario = "<deslogado>";
-		
-		Cookie usuarioCookie = this.getUsuario(req);
-		
-		if ( usuarioCookie != null ) {
-			usuario = usuarioCookie.getValue();
-		}
 
-		System.out.println("Usuário " + usuario + " acessando a URI " + url);
+		String user = "<deslogado>";
+		Cookie userCookie = this.getUserCookie(req);
+		
+		if (userCookie != null)
+			user = userCookie.getValue();
+
+		System.out.println("Usuário " + user + " está acessando " + req.getRequestURI());
 
 		chain.doFilter(request, response);
 	}
 
-	private Cookie getUsuario(HttpServletRequest req) {
+	public Cookie getUserCookie(HttpServletRequest req) {
 		Cookie[] cookies = req.getCookies();
-		if ( cookies == null ) return null;
-		
+
+		if (cookies == null)
+			return null;
+
 		for (Cookie cookie : cookies) {
 			if (cookie.getName().equals("usuario.logado")) {
 				return cookie;
 			}
 		}
-		
+
 		return null;
 	}
 

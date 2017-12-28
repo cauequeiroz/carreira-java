@@ -15,24 +15,31 @@ import br.com.alura.gerenciador.dao.EmpresaDAO;
 
 @WebServlet(urlPatterns = "/busca")
 public class BuscaEmpresa extends HttpServlet {
-
+	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+		
 		PrintWriter writer = resp.getWriter();
 		String filtro = req.getParameter("filtro");
 		Collection<Empresa> empresas = new EmpresaDAO().buscaPorSimilaridade(filtro);
 		
+		
 		writer.println("<html><body>");
-		writer.println("<p>Resultado da busca por empresas:</p>");
-
+		writer.println("<h1>Buscando por empresas:</h1><hr>");
+		
+		if (filtro != null && filtro != "")
+			writer.println("Filtro está ligado: " + filtro);
+		else
+			writer.println("Filtro está desligado.");
+		
 		writer.println("<ul>");
 		for (Empresa empresa : empresas) {
-			writer.println("<li>" + empresa.getId() + ": " + empresa.getNome() + "</li>");
+			writer.println("<li>"+empresa.getId()+" - " + empresa.getNome() + "</li>");
 		}
 		writer.println("</ul>");
-		writer.println("<br><br><a href='/gerenciador/'>Voltar</a>");
+		
+		writer.println("<hr><a href='/gerenciador/'>Voltar</a>");
 		writer.println("</body></html>");
-
+		
 	}
 }

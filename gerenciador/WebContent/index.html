@@ -1,25 +1,38 @@
 <html>
 <body>
-	<h1>Manager 1.0</h1>
-	<p>Bem vindo ao nosso gerenciador de empresas!</p>
+	<!--
+		Objetivos:
+		---------------------------------
+		
+		- Audiotoria - logar o acesso a todos os recursos
+		- /busca - exibir todas as empresas
+		- /busca?filtro=oo - filtrar as empresas exibidas
+		- /novaEmpresa - adicionar uma nova empresa
+		- /login - logar um usuario
+		- Auditoria 2 - exibir o usuario que esta acessando os recursos
+	-->
+	<p>Bem vindo ao nosso gerenciador!</p>
 	
+	<h2>Buscar empresa</h2>
+	<form action="busca" method="GET">
+		Filtro: <input type="text" name="filtro">
+		<input type="submit" value="Buscar">
+	</form>
 	<hr>
-	<h3>Adicionar nova empresa:</h3>
+	
+	<h2>Adicionar empresa</h2>
 	<form action="novaEmpresa" method="POST">
 		Nome: <input type="text" name="nome">
-		<input type="submit" value="Cadastrar">
+		<input type="submit" value="Adicionar">
 	</form>
-	
 	<hr>
-	<h3>Busca empresas</h3>
-	<a href="/gerenciador/busca">Buscar...</a>
 	
-	<hr>
-	<h3>Login</h3>
+	<h2>Login</h2>
 	<form action="login" method="POST">
-		Usuario: <input type="text" name="usuario">
-		Password: <input type="password" name="password">
-		<input type="submit" value="Login">
+		Email: <input type="text" name="email">
+		Senha: <input type="password" name="password">
+		<input type="submit" value="Logar">
 	</form>
+	<hr>
 </body>
 </html>

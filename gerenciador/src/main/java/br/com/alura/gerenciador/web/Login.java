@@ -15,26 +15,32 @@ import br.com.alura.gerenciador.dao.UsuarioDAO;
 
 @WebServlet(urlPatterns = "/login")
 public class Login extends HttpServlet {
-
+	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-		String usuario = req.getParameter("usuario");
+		
+		String email = req.getParameter("email");
 		String password = req.getParameter("password");
-
-		Usuario user = new UsuarioDAO().buscaPorEmailESenha(usuario, password);
-
+		
+		Usuario user = new UsuarioDAO().buscaPorEmailESenha(email, password);
+		
 		PrintWriter writer = resp.getWriter();
-
-		if (user == null) {
-			writer.println("<html><body>Usuário ou senha inválidos.</body></html>");
-		} else {
-			Cookie cookie = new Cookie("usuario.logado", usuario);
-			resp.addCookie(cookie);
+		writer.println("<html><body>");
+		writer.println("<h1>Login:</h1><hr>");
+		
+		if (user != null) {
+			writer.println("<p>Logado com sucesso! - " + user.getEmail() + "</p>");
 			
-			writer.println("<html><body>Bem vindo " + user.getEmail() + ".</body></html>");
+			Cookie cookie = new Cookie("usuario.logado", user.getEmail());
+			resp.addCookie(cookie);
+		} else {
+			writer.println("<p>Acesso negado.</p");			
 		}
-
+		
+		writer.println("<hr><a href='/gerenciador/'>Voltar</a>");
+		writer.println("</body></html>");
+		
+		
 	}
-
+	
 }
