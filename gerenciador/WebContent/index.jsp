@@ -38,5 +38,11 @@
 		<input type="submit" value="Login">
 	</form>
 	
+	<p>Você está logado: ${usuarioLogado.email}</p>
+	<form action="run" method="POST">
+		<input type="hidden" name="task" value="Logout">
+		<input type="submit" value="Logout">
+	</form>
+	
 </body>
 </html>
