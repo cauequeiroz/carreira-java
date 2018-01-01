@@ -1,4 +1,11 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html; charset=UTF-8" %>
+<!DOCTYPE html>
 <html>
+<head>
+	<meta charset="UTF-8">
+	<title>Gerenciador</title>
+</head>
 <body>
 	<p>Bem vindo ao nosso gerenciador!</p>
 	
@@ -25,10 +32,13 @@
 	</form>
 	<hr>
 	
+	<c:if test="${not empty usuarioLogado}">
 	<h2>Logout</h2>
+	<p>Você esta logado como ${usuarioLogado.email}.</p>
 	<form action="logout" method="POST">
 		<input type="submit" value="Deslogar">
 	</form>
 	<hr>
+	</c:if>
 </body>
 </html>

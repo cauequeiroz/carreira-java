@@ -26,7 +26,7 @@ public class FiltroDeAuditoria implements Filter {
 
 		String username = "<deslogado>";
 
-		Usuario user = (Usuario) req.getSession().getAttribute("usuario.logado");
+		Usuario user = (Usuario) req.getSession().getAttribute("usuarioLogado");
 
 		if (user != null)
 			username = user.getEmail();

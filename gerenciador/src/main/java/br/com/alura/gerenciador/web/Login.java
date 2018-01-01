@@ -32,7 +32,7 @@ public class Login extends HttpServlet {
 			writer.println("<p>Acesso negado.</p>");
 		} else {
 			writer.println("<p>Bem vindo " + user.getEmail() + ".</p>");
-			req.getSession().setAttribute("usuario.logado", user);			
+			req.getSession().setAttribute("usuarioLogado", user);			
 		}
 	
 		writer.println("<a href='/gerenciador/'>Voltar</a>");
