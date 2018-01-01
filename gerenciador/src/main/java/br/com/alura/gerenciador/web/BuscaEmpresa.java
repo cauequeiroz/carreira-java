@@ -21,10 +21,15 @@ public class BuscaEmpresa extends HttpServlet {
 		
 		PrintWriter writer = resp.getWriter();
 		String filtro = req.getParameter("filtro");
+		String message = "Filtro está desligado";
 		Collection<Empresa> empresas = new EmpresaDAO().buscaPorSimilaridade(filtro);
+		
+		if (filtro != null && filtro != "")
+			message = "Filtro está ligado: " + filtro;
 		
 		writer.println("<html><body>");
 		writer.println("<h1>Busca por empresas</h1>");
+		writer.println("<p>" + message + "</p>");
 		writer.println("<ul>");
 		
 		for (Empresa empresa : empresas) {
