@@ -22,13 +22,8 @@ public class AdicionaEmpresa extends HttpServlet {
 		Empresa empresa = new Empresa(nome);
 		new EmpresaDAO().adiciona(empresa);
 		
-		PrintWriter writer = resp.getWriter();
-		writer.println("<html><body>");
-		writer.println("<h1>Adiciona empresa</h1>");
-		writer.println("<p>Empresa "+ empresa.getNome() +" adiciona com sucesso!</p>");
-		writer.println("<a href='/gerenciador/'>Voltar</a>");
-		writer.println("</body></html>");
-		
+		req.setAttribute("empresa", empresa);
+		req.getRequestDispatcher("/WEB-INF/pages/adiciona.jsp").forward(req, resp);		
 	}
 	
 }
