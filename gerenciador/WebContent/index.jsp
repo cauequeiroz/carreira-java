@@ -40,6 +40,17 @@
 			</form>
 		</c:when>
 		<c:otherwise>
+			<p>Buscar empresas</p>
+			<form action="run" method="GET">
+				Filtro: <input type="text" name="filter">
+				
+				<input type="hidden" name="task" value="Search">
+				<input type="submit" value="Buscar">
+				
+				<a href="/gerenciador/run?task=Search">Listar todas</a>
+			</form>
+			
+			<hr>
 			<p>Você está logado: ${usuarioLogado.email}</p>
 			<form action="run" method="POST">
 				<input type="hidden" name="task" value="Logout">
