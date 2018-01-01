@@ -7,19 +7,19 @@
 	<title>Gerenciador</title>
 </head>
 <body>
-	<p>Bem vindo ao nosso gerenciador!</p>
+	<h1>Bem vindo ao nosso gerenciador!</h1>
 	
 	<h2>Buscar empresa</h2>
-	<form action="fazTudo" method="GET">
+	<form action="executa" method="GET">
 		Filtro: <input type="text" name="filtro">
 		<input type="hidden" name="tarefa" value="BuscaEmpresa">
 		<input type="submit" value="Buscar">
-		<a href="/gerenciador/fazTudo?tarefa=BuscaEmpresa">Todas as empresas</a>
+		<a href="/gerenciador/executa?tarefa=BuscaEmpresa">Todas as empresas</a>
 	</form>
 	<hr>
 	
 	<h2>Adicionar empresa</h2>
-	<form action="fazTudo" method="POST">
+	<form action="executa" method="POST">
 		Nome: <input type="text" name="nome">
 		<input type="hidden" name="tarefa" value="AdicionaEmpresa">
 		<input type="submit" value="Adicionar">
@@ -29,7 +29,7 @@
 	<c:choose>
 		<c:when test="${empty usuarioLogado}">
 			<h2>Login</h2>
-			<form action="fazTudo" method="POST">
+			<form action="executa" method="POST">
 				Email: <input type="text" name="email">
 				Senha: <input type="password" name="password">
 				<input type="hidden" name="tarefa" value="Login">
@@ -39,7 +39,7 @@
 		<c:otherwise>
 			<h2>Logout</h2>
 			<p>Você esta logado como ${usuarioLogado.email}.</p>
-			<form action="fazTudo" method="POST">
+			<form action="executa" method="POST">
 				<input type="hidden" name="tarefa" value="Logout">
 				<input type="submit" value="Deslogar">
 			</form>

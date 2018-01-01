@@ -13,7 +13,7 @@ Exercícios das carreiras de Java da Alura.
 ## Desenvolvedor Java Web
 
 - [x] HTTP: Entendendo a web por debaixo dos panos
-- [ ] Servlets: Fundamentos de Java na Web
+- [x] Servlets: Fundamentos de Java na Web
 - [ ] Java e JSTL: Tags para facilitar o desenvolvimento JSP
 - [ ] MySQL I: Iniciando suas consultas
 - [ ] Java e JDBC: Trabalhando com um banco de dados
