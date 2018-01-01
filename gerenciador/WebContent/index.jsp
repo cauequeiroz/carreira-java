@@ -28,21 +28,24 @@
 	<h1>Gerenciador 2.0</h1>
 	<hr>
 	
-	<h2>Login</h2>
-	<p>Digite seu email e senha para logar.</p>
-	<form action="run" method="POST">
-		Email: <input type="text" name="email">
-		Password: <input type="password" name="password">
-		
-		<input type="hidden" name="task" value="Login">
-		<input type="submit" value="Login">
-	</form>
-	
-	<p>Você está logado: ${usuarioLogado.email}</p>
-	<form action="run" method="POST">
-		<input type="hidden" name="task" value="Logout">
-		<input type="submit" value="Logout">
-	</form>
-	
+	<c:choose>
+		<c:when test="${empty usuarioLogado}">
+			<p>Digite seu email e senha para logar.</p>
+			<form action="run" method="POST">
+				Email: <input type="text" name="email">
+				Password: <input type="password" name="password">
+				
+				<input type="hidden" name="task" value="Login">
+				<input type="submit" value="Login">
+			</form>
+		</c:when>
+		<c:otherwise>
+			<p>Você está logado: ${usuarioLogado.email}</p>
+			<form action="run" method="POST">
+				<input type="hidden" name="task" value="Logout">
+				<input type="submit" value="Logout">
+			</form>
+		</c:otherwise>
+	</c:choose>
 </body>
 </html>
