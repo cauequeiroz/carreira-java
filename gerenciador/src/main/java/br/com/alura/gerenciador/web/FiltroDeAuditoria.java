@@ -9,6 +9,7 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 
 @WebFilter(urlPatterns = "/*")
@@ -20,10 +21,25 @@ public class FiltroDeAuditoria implements Filter {
 		
 		HttpServletRequest req = (HttpServletRequest) request;
 		String uri = req.getRequestURI();
+		String username = this.getUserName(req);
 		
-		System.out.println("Usuário <deslogado> passando por " + uri);
+		System.out.println("Usuário " + username + " passando por " + uri);
 		
 		chain.doFilter(request, response);
+	}
+	
+	public String getUserName(HttpServletRequest request) {
+		String defaultUsername = "<deslogado>";
+		
+		Cookie[] cookies =  request.getCookies();
+		if (cookies == null) return defaultUsername;
+		
+		for (Cookie cookie : cookies) {
+			if (cookie.getName().equals("usuario.logado"))
+				return cookie.getValue();
+		}
+		
+		return defaultUsername;
 	}
 	
 	@Override
