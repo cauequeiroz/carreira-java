@@ -51,6 +51,15 @@
 			</form>
 			
 			<hr>
+			<p>Adicionar empresa</p>
+			<form action="run" method="POST">
+				Nome: <input type="text" name="nome">
+				
+				<input type="hidden" name="task" value="Add">
+				<input type="submit" value="Adicionar">
+			</form>
+			
+			<hr>
 			<p>Você está logado: ${usuarioLogado.email}</p>
 			<form action="run" method="POST">
 				<input type="hidden" name="task" value="Logout">
