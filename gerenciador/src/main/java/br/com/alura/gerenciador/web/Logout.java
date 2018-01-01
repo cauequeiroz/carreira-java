@@ -16,11 +16,7 @@ public class Logout extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		Cookie cookie = new Cookies(req.getCookies()).getUsuarioLogado();
-		if (cookie != null) {
-			cookie.setMaxAge(0);
-			resp.addCookie(cookie);
-		}
+		req.getSession().removeAttribute("usuario.logado");
 
 		PrintWriter writer = resp.getWriter();
 		writer.println("<html><body>");

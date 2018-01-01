@@ -32,11 +32,7 @@ public class Login extends HttpServlet {
 			writer.println("<p>Acesso negado.</p>");
 		} else {
 			writer.println("<p>Bem vindo " + user.getEmail() + ".</p>");
-			
-			Integer TEN_MINUTES = 10 * 60;
-			Cookie cookie = new Cookie("usuario.logado", user.getEmail());
-			cookie.setMaxAge(TEN_MINUTES);
-			resp.addCookie(cookie);
+			req.getSession().setAttribute("usuario.logado", user);			
 		}
 	
 		writer.println("<a href='/gerenciador/'>Voltar</a>");
