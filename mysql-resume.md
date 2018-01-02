@@ -32,5 +32,7 @@ $ select * from bar;
 $ select valor, data from bar;
 $ select valor * 3, data from bar;
 $ select * from bar where valor > 15; // >, <, =, <> (diferente)
+$ select * from bar where valor > 15 and data < '2017-01-01';
+$ select * from bar where valor > 15 or data < '2017-01-01';
 $ select * from bar where info like 'Ran%'; // % é o coringa
 ```
