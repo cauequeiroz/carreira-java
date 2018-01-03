@@ -45,6 +45,7 @@ $ insert into compras (valor, data, recebido, info) values (150.20, '2017-12-01'
 $ select * from compras;
 $ select valor, data from compras;
 $ select valor * 3, data from compras;
+
 $ select * from compras where valor > 15; // >, <, =, <> (diferente)
 $ select * from compras where valor > 15 and data < '2017-01-01';
 $ select * from compras where valor > 15 or data < '2017-01-01';
@@ -53,6 +54,13 @@ $ select * from compras where info like 'Ran%'; // % é o coringa
 
 $ select * from compras where valor is not null;
 $ select * from compras where data is null;
+
+$ select * from compras order by valor;
+
+$ select avg(valor) from compras where data < '2010-01-01';
+$ select avg(valor) as 'Media dos precos' from compras;
+$ select forma_pagt, sum(valor) from compras group by forma_pagt;
+$ select forma_pagt, count(id) from compras group by forma_pagt;
 ```
 
 # Update
