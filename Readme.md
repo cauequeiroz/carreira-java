@@ -15,5 +15,5 @@ Exercícios das carreiras de Java da Alura.
 - [x] HTTP: Entendendo a web por debaixo dos panos
 - [x] Servlets: Fundamentos de Java na Web
 - [x] Java e JSTL: Tags para facilitar o desenvolvimento JSP
-- [ ] MySQL I: Iniciando suas consultas
+- [x] MySQL I: Iniciando suas consultas
 - [ ] Java e JDBC: Trabalhando com um banco de dados
