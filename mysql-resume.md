@@ -18,6 +18,14 @@ $ use controle_compras;
 $ create table compras (id int auto_increment primary key, valor double, data date, recebido boolean, info varchar(255));
 ```
 
+# Modify table
+
+```
+$ alter table compras add column forma_pagt enum('boleto','dinheiro');
+$ alter table compras modify valor double not null;
+$ alter table compras modify recebido boolean default '0';
+```
+
 # Show
 
 ```
@@ -42,6 +50,9 @@ $ select * from compras where valor > 15 and data < '2017-01-01';
 $ select * from compras where valor > 15 or data < '2017-01-01';
 $ select * from compras where valor between 400 and 500;
 $ select * from compras where info like 'Ran%'; // % é o coringa
+
+$ select * from compras where valor is not null;
+$ select * from compras where data is null;
 ```
 
 # Update
