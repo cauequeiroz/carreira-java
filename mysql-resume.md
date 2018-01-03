@@ -24,6 +24,7 @@ $ create table compras (id int auto_increment primary key, valor double, data da
 $ alter table compras add column forma_pagt enum('boleto','dinheiro');
 $ alter table compras modify valor double not null;
 $ alter table compras modify recebido boolean default '0';
+$ alter table compras add foreign key (comprador_id) references compradores(id);
 ```
 
 # Show
@@ -61,6 +62,9 @@ $ select avg(valor) from compras where data < '2010-01-01';
 $ select avg(valor) as 'Media dos precos' from compras;
 $ select forma_pagt, sum(valor) from compras group by forma_pagt;
 $ select forma_pagt, count(id) from compras group by forma_pagt;
+
+$ select * from compras join compradores on compras.comprador_id = compradores.id;
+$ select compras.* from compras join compradores on compras.comprador_id = compradores.id;
 ```
 
 # Update
