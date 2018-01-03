@@ -16,7 +16,13 @@ $ mysql -uroot -p
 $ create database foo;
 $ use foo;
 $ create table bar (id int auto_increment primary key, valor double, data date, recebido boolean, info varchar(255));
+```
+
+# Show
+
+```
 $ desc bar;
+$ show tables;
 ```
 
 # Insert
