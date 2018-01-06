@@ -10,20 +10,19 @@ public class TestaListagem {
 	public static void main(String[] args) throws SQLException {
 
 		Connection connection = DriverManager.getConnection("jdbc:hsqldb:hsql://localhost/loja-virtual", "SA", "");
-		System.out.println("[DEV] Conexão aberta.\n");
-
 		Statement statement = connection.createStatement();
-		boolean result = statement.execute("SELECT * FROM Produto");
-		ResultSet resultSet = statement.getResultSet();
-
-		while (resultSet.next()) {
-			System.out.println(resultSet.getInt("id") + " - " + resultSet.getString("nome") + ": "
-					+ resultSet.getString("descricao"));
+		
+		statement.execute("select * from Produto");
+		
+		ResultSet result = statement.getResultSet();
+		while(result.next()) {
+			System.out.print(result.getString("id") + " - ");
+			System.out.print(result.getString("nome") + " - ");
+			System.out.print(result.getString("descricao") + "\n");
 		}
 		
+		result.close();
 		statement.close();
-		resultSet.close();
 		connection.close();
-		System.out.println("\n[DEV] Conexão fechada.");
 	}
 }
