@@ -37,15 +37,18 @@ public class ProdutosDAO {
 		String sql = "select * from Produto";
 		
 		try(PreparedStatement stmt = con.prepareStatement(sql)) {
-			stmt.execute();
-			
-			try(ResultSet result = stmt.getResultSet()) {
-				while(result.next()) {
-					produtos.add(new Produto(result.getInt("id"), result.getString("nome"), result.getString("descricao")));
-				}
-			}
+			stmt.execute();			
+			transformaEmProduto(produtos, stmt);
 		}
 		
 		return produtos;
+	}
+
+	private void transformaEmProduto(List<Produto> produtos, PreparedStatement stmt) throws SQLException {
+		try(ResultSet result = stmt.getResultSet()) {
+			while(result.next()) {
+				produtos.add(new Produto(result.getInt("id"), result.getString("nome"), result.getString("descricao")));
+			}
+		}
 	}
 }
